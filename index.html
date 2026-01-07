@@ -6,11 +6,21 @@
 </head>
 <body>
 
-<!-- LOGIN -->
-<div id="loginBox">
-    <h2>MiniSocial Login</h2>
-    <input type="text" id="username" placeholder="Enter username">
+<!-- LOGIN / SIGN UP -->
+<div id="authBox">
+    <h2>MiniSocial</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
     <button onclick="login()">Login</button>
+    <p>Or <span onclick="showSignUp()">Sign Up</span></p>
+</div>
+
+<div id="signUpBox" class="hidden">
+    <h2>Sign Up</h2>
+    <input type="text" id="newUserName" placeholder="Username">
+    <input type="password" id="newPass" placeholder="Password">
+    <button onclick="signUp()">Sign Up</button>
+    <p>Already have an account? <span onclick="showLogin()">Login</span></p>
 </div>
 
 <!-- FEED -->
@@ -28,7 +38,7 @@
     <img class="post-image" src="https://picsum.photos/300/200?random=1" alt="Post Image">
     <p>Nature vibes 🌿</p>
     <div class="actions">
-        <button onclick="likePost(0)">❤️ Like</button>
+        <button onclick="likePost(0)">👍 Like</button>
         <span id="like0">0</span>
         <button onclick="commentPost(0)">💬 Comment</button>
         <button onclick="sharePost()">🔗 Share</button>
@@ -44,7 +54,7 @@
     <img class="post-image" src="https://picsum.photos/300/200?random=2" alt="Post Image">
     <p>Coding life 💻</p>
     <div class="actions">
-        <button onclick="likePost(1)">❤️ Like</button>
+        <button onclick="likePost(1)">👍 Like</button>
         <span id="like1">0</span>
         <button onclick="commentPost(1)">💬 Comment</button>
         <button onclick="sharePost()">🔗 Share</button>
@@ -55,9 +65,9 @@
 <!-- Add New Post -->
 <div class="new-post">
     <h3>Add New Post</h3>
-    <input type="text" id="newUser" placeholder="Username">
-    <input type="text" id="newCaption" placeholder="Caption">
-    <input type="text" id="newImage" placeholder="Image URL">
+    <input type="text" id="postUser" placeholder="Username">
+    <input type="text" id="postCaption" placeholder="Caption">
+    <input type="text" id="postImage" placeholder="Image URL">
     <button onclick="addPost()">Add Post</button>
 </div>
 
@@ -69,4 +79,4 @@
 
 
 
-    
+
