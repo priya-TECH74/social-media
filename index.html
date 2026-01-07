@@ -1,43 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>MiniSocial</title>
-
-<!-- CSS LINK (IMPORTANT) -->
-<link rel="stylesheet" href="style.css">
+    <title>MiniSocial</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- LOGIN -->
-<div id="loginBox">
-    <h2>MiniSocial</h2>
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="login()">Login</button>
+<!-- LOGIN SCREEN -->
+<div id="loginContainer">
+    <div id="loginBox">
+        <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fHNvY2lhbCUyMG1lZGlhfGVufDB8fHx8MTY5OTk0NzYwMQ&ixlib=rb-4.0.3&q=80&w=100" class="logo" alt="Logo">
+        <h2>Welcome to MiniSocial</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
 </div>
 
 <!-- FEED -->
-<div id="feed">
-<div id="feedContainer">
+<div id="feed" class="hidden">
+    <div id="feedContainer">
+        <header>
+            <h1>MiniSocial</h1>
+        </header>
 
-<header>
-    <h2>🏠 Home</h2>
-</header>
+        <!-- Sample Post -->
+        <div class="post">
+            <div class="post-header">
+                <img class="avatar" src="https://i.pravatar.cc/50?img=1" alt="Avatar">
+                <span class="user">Rahul</span>
+            </div>
+            <img class="post-image" src="https://picsum.photos/300/200?random=1" alt="Post">
+            <p>Nature vibes 🌿</p>
+            <div class="actions">
+                <button class="like-btn" onclick="likePost(0)">👍 Like</button>
+                <span id="like0">0</span>
+                <button class="comment-btn" onclick="commentPost(0)">💬 Comment</button>
+                <button class="share-btn" onclick="sharePost()">🔗 Share</button>
+            </div>
+            <div id="comments0" class="comments"></div>
+        </div>
 
-<div class="new-post">
-    <input type="text" id="postText" placeholder="What's on your mind?">
-    <input type="text" id="postImage" placeholder="Image URL (optional)">
-    <button onclick="addPost()">➕ Post</button>
+        <div class="post">
+            <div class="post-header">
+                <img class="avatar" src="https://i.pravatar.cc/50?img=2" alt="Avatar">
+                <span class="user">Anu</span>
+            </div>
+            <img class="post-image" src="https://picsum.photos/300/200?random=2" alt="Post">
+            <p>Coding life 💻</p>
+            <div class="actions">
+                <button class="like-btn" onclick="likePost(1)">👍 Like</button>
+                <span id="like1">0</span>
+                <button class="comment-btn" onclick="commentPost(1)">💬 Comment</button>
+                <button class="share-btn" onclick="sharePost()">🔗 Share</button>
+            </div>
+            <div id="comments1" class="comments"></div>
+        </div>
+
+        <!-- Add New Post -->
+        <div class="new-post">
+            <h3>Add New Post</h3>
+            <input type="text" id="postUser" placeholder="Username">
+            <input type="text" id="postCaption" placeholder="Caption">
+            <input type="text" id="postImage" placeholder="Image URL">
+            <button onclick="addPost()">Add Post</button>
+        </div>
+    </div>
 </div>
 
-<div id="posts"></div>
-
-</div>
-</div>
-
-<!-- JS LINK (BODY LAST) -->
 <script src="script.js"></script>
 </body>
 </html>
+
