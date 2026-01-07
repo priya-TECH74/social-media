@@ -1,30 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Social Media</title>
+    <title>SocialHub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Social Media Feed</h1>
+<!-- LOGIN -->
+<div id="loginBox">
+    <h2>SocialHub Login</h2>
+    <input type="text" id="username" placeholder="Enter username">
+    <button onclick="login()">Login</button>
+</div>
+
+<!-- FEED -->
+<div id="feed" class="hidden">
+
+<header>
+    <h1>SocialHub</h1>
+</header>
 
 <div class="post">
-    <img src="https://via.placeholder.com/300x200" alt="post image">
-    <p><b>User1</b></p>
-    <p>Enjoying a beautiful day 🌸</p>
-    <button onclick="likePost(0)">Like</button>
-    <span id="like0">0 Likes</span>
+    <div class="user">👤 Rahul</div>
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" />
+    <p>Nature vibes 🌿</p>
+    <div class="actions">
+        <button onclick="likePost(0)">❤️ Like</button>
+        <span id="like0">0</span>
+        <button onclick="commentPost()">💬 Comment</button>
+        <button onclick="sharePost()">🔗 Share</button>
+    </div>
 </div>
 
 <div class="post">
-    <img src="https://via.placeholder.com/300x200/87CEEB" alt="post image">
-    <p><b>User2</b></p>
-    <p>Learning web development 💻</p>
-    <button onclick="likePost(1)">Like</button>
-    <span id="like1">0 Likes</span>
+    <div class="user">👤 Anu</div>
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" />
+    <p>Coding life 💻</p>
+    <div class="actions">
+        <button onclick="likePost(1)">❤️ Like</button>
+        <span id="like1">0</span>
+        <button onclick="commentPost()">💬 Comment</button>
+        <button onclick="sharePost()">🔗 Share</button>
+    </div>
+</div>
+
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
 
+    
