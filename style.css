@@ -5,14 +5,17 @@ body {
 }
 
 header {
-    background: linear-gradient(to right, #4facfe, #00f2fe);
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
     padding: 15px;
     text-align: center;
     color: white;
+    position: sticky;
+    top: 0;
 }
 
 #loginBox {
-    width: 300px;
+    width: 90%;
+    max-width: 350px;
     margin: 100px auto;
     background: white;
     padding: 20px;
@@ -30,38 +33,75 @@ header {
     display: none;
 }
 
+#feed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
 .post {
     background: white;
-    width: 350px;
-    margin: 20px auto;
+    width: 90%;
+    max-width: 400px;
+    margin: 20px 0;
     border-radius: 10px;
     box-shadow: 0 0 10px #ccc;
+    overflow: hidden;
 }
 
-.post img {
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-}
-
-.user {
+.post-header {
+    display: flex;
+    align-items: center;
     padding: 10px;
-    font-weight: bold;
 }
 
-.post p {
-    padding: 0 10px;
+.avatar {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post-image {
+    width: 100%;
+    height: auto;
 }
 
 .actions {
     padding: 10px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
 .actions button {
     background: none;
     border: none;
     cursor: pointer;
-    margin-right: 10px;
     font-size: 14px;
 }
+
+.comments {
+    padding: 0 10px 10px 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.new-post {
+    background: white;
+    padding: 15px;
+    width: 90%;
+    max-width: 400px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.new-post input {
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 6px;
+}
+
+
 
 
