@@ -13,7 +13,7 @@ header {
     top: 0;
 }
 
-#loginBox {
+#authBox, #signUpBox {
     width: 90%;
     max-width: 350px;
     margin: 100px auto;
@@ -23,15 +23,13 @@ header {
     box-shadow: 0 0 10px gray;
 }
 
-#loginBox input {
+#authBox input, #signUpBox input {
     width: 90%;
     padding: 8px;
     margin-bottom: 10px;
 }
 
-.hidden {
-    display: none;
-}
+.hidden { display: none; }
 
 #feed {
     display: flex;
@@ -56,15 +54,9 @@ header {
     padding: 10px;
 }
 
-.avatar {
-    border-radius: 50%;
-    margin-right: 10px;
-}
+.avatar { border-radius: 50%; margin-right: 10px; }
 
-.post-image {
-    width: 100%;
-    height: auto;
-}
+.post-image { width: 100%; height: auto; }
 
 .actions {
     padding: 10px;
@@ -96,11 +88,9 @@ header {
     box-shadow: 0 0 10px #ccc;
 }
 
-.new-post input {
-    width: 100%;
-    margin-bottom: 8px;
-    padding: 6px;
-}
+.new-post input { width: 100%; margin-bottom: 8px; padding: 6px; }
+
+span { color: blue; cursor: pointer; }
 
 
 
