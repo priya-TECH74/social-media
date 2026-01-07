@@ -1,81 +1,174 @@
+/* Make html & body full screen */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'Segoe UI', sans-serif;
+    width: 100%;
+    font-family: Arial, sans-serif;
 }
 
-/* BACKGROUND */
+/* Full-page animated colorful background */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle at top, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background: linear-gradient(135deg, #667eea, #764ba2, #f6d365, #fda085);
     background-size: 400% 400%;
-    animation: bgMove 18s ease infinite;
+    animation: gradientBG 15s ease infinite;
 }
 
-@keyframes bgMove {
+/* Gradient animation */
+@keyframes gradientBG {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* LOGIN */
-#loginBox {
-    background: white;
-    padding: 35px;
-    border-radius: 22px;
-    width: 320px;
-    text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+/* LOGIN SCREEN */
+#loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
+
+#loginBox {
+    background: rgba(255, 255, 255, 0.95); /* Slight transparency to show background */
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    width: 320px;
+}
+
+#loginBox .logo {
+    width: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid #4facfe;
+}
+
+#loginBox h2 { color: #4facfe; }
 
 #loginBox input {
     width: 90%;
     padding: 12px;
-    margin: 10px 0;
+    margin: 12px 0;
     border-radius: 10px;
     border: 1px solid #ccc;
 }
 
 #loginBox button {
+    width: 60%;
     padding: 12px;
-    width: 70%;
-    border-radius: 12px;
+    margin-top: 15px;
+    background: #ff6a00;
     border: none;
-    background: linear-gradient(to right, #ff512f, #dd2476);
+    border-radius: 10px;
     color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#loginBox button:hover {
+    background: #ff9f00;
 }
 
 /* FEED */
 #feed {
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Scrollable vertically */
     width: 100%;
     min-height: 100vh;
+    padding: 20px 0;
+    overflow-y: auto; /* scroll when posts overflow */
 }
 
 #feedContainer {
-    max-width: 420px;
-    margin: auto;
-    padding: 15px;
-}
-
-/* POST */
-.post {
-    background: white;
-    border-radius: 18px;
-    margin-bottom: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-.post img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
+    max-width: 500px;
 }
+
+/* POST + HEADER + NEW POST */
+.post, .new-post {
+    background: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.post:hover { transform: scale(1.02); }
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+
+.avatar { border-radius: 50%; margin-right: 10px; border: 2px solid white; }
+
+.post-image { width: 100%; height: auto; }
 
 .actions {
-    display: flex;
-    justify-content: space-around;
     padding: 10px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
+.actions button {
+    background: #ff6a00;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.actions button:hover { background: #ff9f00; }
+
+.comments {
+    padding: 0 10px 10px 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* NEW POST */
+.new-post {
+    padding: 20px;
+}
+
+.new-post input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.new-post button {
+    width: 100%;
+    padding: 12px;
+    background: #ff512f;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.new-post button:hover { background: #dd2476; }
