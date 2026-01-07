@@ -6,20 +6,25 @@
 </head>
 <body>
 
-<h1>Simple Social Media App</h1>
+<h1>Social Media Feed</h1>
 
 <div class="post">
-    <p><b>User1:</b> Hello! This is my first post 😊</p>
-    <button onclick="likePost()">Like</button>
-    <button onclick="commentPost()">Comment</button>
+    <img src="https://via.placeholder.com/300x200" alt="post image">
+    <p><b>User1</b></p>
+    <p>Enjoying a beautiful day 🌸</p>
+    <button onclick="likePost(0)">Like</button>
+    <span id="like0">0 Likes</span>
 </div>
 
 <div class="post">
-    <p><b>User2:</b> Learning HTML, CSS, JavaScript 👍</p>
-    <button onclick="likePost()">Like</button>
-    <button onclick="commentPost()">Comment</button>
+    <img src="https://via.placeholder.com/300x200/87CEEB" alt="post image">
+    <p><b>User2</b></p>
+    <p>Learning web development 💻</p>
+    <button onclick="likePost(1)">Like</button>
+    <span id="like1">0 Likes</span>
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
+
